@@ -31,7 +31,7 @@ export const Timeline = ({ data }) => {
           Education
         </h2>
         <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-          I am currently pursuing B.Tech in Information Technology Final Year Student.
+        I am currently a final-year B.Tech student in Information Technology.
         </p>
       </div>
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">

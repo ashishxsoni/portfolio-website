@@ -38,7 +38,7 @@ const NavbarLinks = () => {
       <li className="group flex items-center">
         <a
           className="cursor-pointer lg:text-white sm:text-dark_blue hover:text-light_blue lg:hover:text-dark_yellow transition-all duration-500"
-          href="https://umarkhursheed.hashnode.dev/"
+          href="https://hashnode.com/@ashishxsoni"
           target="_blank"
         >
           Blogs
