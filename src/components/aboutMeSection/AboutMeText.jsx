@@ -41,8 +41,7 @@ const AboutMeText = () => {
 
       <p className="text-justify">
         I’m <b>Ashish Soni</b>, a passionate <b>Full Stack Web Developer</b>{" "}
-        with a strong grasp of <b>Data Structures & Algorithms</b> and the{" "}
-        <b>MERN Stack</b>. I’ve solved over <b>1300+ DSA problems</b>, hold a{" "}
+        with a strong grasp of <b>Data Structures & Algorithms</b>. I’ve solved over <b>1300+ DSA problems</b>, hold a{" "}
         <b>LeetCode Knight Badge</b>, and reached a <b>peak rating of 1955</b>.
         <br />
         <br />
@@ -60,7 +59,7 @@ const AboutMeText = () => {
         <br />
         <br />
         Outside of coding, I enjoy crafting <b>UI/UX designs</b>, exploring{" "}
-        <b>Redux Toolkit</b>, writing <b>technical blogs</b>, and sharing ideas
+        <b>MERN stack</b>, writing <b>technical blogs</b>, and sharing ideas
         through <b>poetry</b>.
       </p>
 
