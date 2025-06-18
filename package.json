@@ -17,6 +17,7 @@
     "appwrite": "^17.0.0",
     "clsx": "^2.1.1",
     "dot-env": "^0.0.1",
+    "dotenv": "^16.5.0",
     "formik": "^2.4.6",
     "framer-motion": "^11.15.0",
     "motion": "^12.10.5",
