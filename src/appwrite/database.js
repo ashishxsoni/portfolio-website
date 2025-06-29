@@ -1,18 +1,15 @@
-import { Client, Databases, Storage, Query } from "appwrite";
+import { Client, Databases, Query } from "appwrite";
 import config from "../config/config";
 
 export class ProjectService {
   client = new Client();
   databases;
-  storage;
 
   constructor() {
     this.client
       .setEndpoint(config.appwriteURL)
       .setProject(config.appwriteProjectId);
-      
     this.databases = new Databases(this.client);
-    this.storage = new Storage(this.client);
   }
 
   async getAllProjects() {
@@ -20,11 +17,14 @@ export class ProjectService {
       return await this.databases.listDocuments(
         config.appwriteDatabaseId,
         config.appwriteProjectCollectionId,
-        [Query.orderDesc("$createdAt")] // Newest projects first
+        [
+          Query.orderDesc('$updatedAt'), // Sort by most recently updated
+          Query.limit(100) // Optional: limit results
+        ]
       );
     } catch (error) {
       console.error("Appwrite Error :: getAllProjects ::", error);
-      return { documents: [] }; // Return empty array on error
+      return { documents: [] };
     }
   }
 
