@@ -1,41 +1,45 @@
-import { Client, Databases, Storage } from "appwrite";
+import { Client, Databases, Storage, Query } from "appwrite";
 import config from "../config/config";
-export class Services {
+
+export class ProjectService {
   client = new Client();
   databases;
-  Projectbucket;
+  storage;
 
   constructor() {
     this.client
       .setEndpoint(config.appwriteURL)
       .setProject(config.appwriteProjectId);
+      
     this.databases = new Databases(this.client);
-    this.Projectbucket = new Storage(this.client);
-    this.SkillsBucket = new Storage(this.client);
+    this.storage = new Storage(this.client);
   }
 
   async getAllProjects() {
     try {
       return await this.databases.listDocuments(
         config.appwriteDatabaseId,
-        config.appwriteProjectCollectionId
+        config.appwriteProjectCollectionId,
+        [Query.orderDesc("$createdAt")] // Newest projects first
       );
     } catch (error) {
-      console.log("Error in Fetching Project : ", error);
+      console.error("Appwrite Error :: getAllProjects ::", error);
+      return { documents: [] }; // Return empty array on error
     }
   }
 
-  async getProjectImage(featuredImage) {
+  async getProjectImage(imageId) {
     try {
-      return await this.Projectbucket.getFileView(
+      return this.storage.getFileView(
         config.appwriteProjectImagesBucketId,
-        featuredImage
+        imageId
       );
     } catch (error) {
-      console.log("Error in Getting Project Image : ", error);
+      console.error("Appwrite Error :: getProjectImage ::", imageId, error);
+      return null;
     }
   }
 }
 
-const services = new Services();
-export default services;
+const projectService = new ProjectService();
+export default projectService;
