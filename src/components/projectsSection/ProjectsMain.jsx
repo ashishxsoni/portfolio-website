@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 
 const ProjectsMain = () => {
   const [projects, setProjects] = useState([]);
+  
   useEffect(() => {
     services.getAllProjects().then((project) => {
       if (project) {
@@ -15,6 +16,7 @@ const ProjectsMain = () => {
       }
     });
   }, []);
+
   return (
     <div id="projects" className="max-w-[1200px] mx-auto px-4">
       <motion.div
@@ -27,13 +29,14 @@ const ProjectsMain = () => {
       </motion.div>
       <div className="flex flex-col gap-24 max-w-[900px] mx-auto mt-12">
         {projects.map((project, index) => {
+          const align = index % 2 === 0 ? "left" : "right"; // Alternate alignment
           return (
             <SingleProject
-              key={index}
+              key={project.$id || index} // Better to use project.$id if available
               name={project.project_name}
               desc={project.project_desc}
               github={project.github_link}
-              align={project.align}
+              align={align} // Dynamic alignment based on index
               image={project.featuredImage}
               link={project.live_link}
             />
@@ -41,7 +44,7 @@ const ProjectsMain = () => {
         })}
       </div>
       <div className="w-full flex justify-center items-center mt-8">
-        <button className="border border-white bg-gradient-to-r  from-dark_yellow to-light_yellow rounded-full py-2 px-4 text-lg flex gap-2 items-center mt-10 hover:bg-light_yellow hover:scale-110 transition-all duration-500 cursor-pointer md:self-start sm:self-center">
+        <button className="border border-white bg-gradient-to-r from-dark_yellow to-light_yellow rounded-full py-2 px-4 text-lg flex gap-2 items-center mt-10 hover:bg-light_yellow hover:scale-110 transition-all duration-500 cursor-pointer md:self-start sm:self-center">
           <a
             href="https://github.com/ashishxsoni"
             target="_blank"
