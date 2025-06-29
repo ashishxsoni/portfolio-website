@@ -29,7 +29,7 @@ const ProjectsMain = () => {
       </motion.div>
       <div className="flex flex-col gap-24 max-w-[900px] mx-auto mt-12">
         {projects.map((project, index) => {
-          const align = index % 2 === 0 ? "left" : "right"; // Alternate alignment
+          const align = index % 2 === 1 ? "left" : "right"; // Alternate alignment
           return (
             <SingleProject
               key={project.$id || index} // Better to use project.$id if available
