@@ -28,7 +28,7 @@ function Education() {
           <p className="mb-4 text-sm font-normal text-neutral-700 md:text-lg dark:text-neutral-400">
             Bachelor of Science in Mathematics
             <br />
-            Percentage: 70%
+             CGPA: 7.5
           </p>
         </div>
       ),
