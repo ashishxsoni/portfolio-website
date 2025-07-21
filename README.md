@@ -1,4 +1,4 @@
-# 🧑‍💻 Ashish Soni – Portfolio Website
+#  Ashish Soni – Portfolio Website
 
 This is my personal portfolio website built to showcase my projects, achievements, skills, and professional background.
 
