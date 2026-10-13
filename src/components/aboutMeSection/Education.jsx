@@ -4,7 +4,7 @@ import { Timeline } from "../ui/timeline";
 function Education() {
   const data = [
     {
-      title: "July 2023 – Present",
+      title: "July 2023 – June 2026",
       content: (
         <div>
           <p className="mb-2 text-md font-normal text-neutral-800 md:text-xl dark:text-neutral-200">
@@ -13,7 +13,7 @@ function Education() {
           <p className="mb-4 text-sm font-normal text-neutral-800 md:text-lg dark:text-neutral-400">
             Bachelor of Technology (B.Tech) in Information Technology
             <br />
-            CGPA: 8.4 (Till Date)
+            CGPA: 8.4
           </p>
         </div>
       ),
@@ -43,7 +43,7 @@ function Education() {
           <p className="mb-4 text-sm font-normal text-neutral-700 md:text-lg dark:text-neutral-400">
             Intermediate (10+2) with PCM
             <br />
-            Percentage:80%
+            Percentage:81%
           </p>
         </div>
       ),
